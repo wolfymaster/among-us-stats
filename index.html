@@ -1,18 +1,45 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-
-        <div style="display:flex;">
-            <div style="width:500px;">
-                <canvas id="emergencies_called" width="400" height="400"></canvas>
+        <div id="header" class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        Among Us Stats
+                    </div>
+                </div>
             </div>
 
-            <div style="width:500px;">
-                <canvas id="bodies_reported" width="400" height="400"></canvas>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <canvas id="emergencies_called"></canvas>
+                </div>
+
+                <div class="col-sm">
+                    <canvas id="bodies_reported"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div class="pad-20">
+                                <a href="tos.html" target="_blank">TOS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

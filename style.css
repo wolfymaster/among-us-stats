@@ -1,0 +1,14 @@
+#emergencies_called,
+#bodies_reported {
+    width: 100%;
+}
+
+#footer {
+    background-color: beige;
+    bottom: 0;
+    position:absolute;
+}
+
+.pad-20 {
+    padding: 20px 0;
+}
