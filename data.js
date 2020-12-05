@@ -1,15 +1,7 @@
 async function amongus_data() {
-    const data = await fetch('https://api.airtable.com/v0/appizKcsd7v5Fgdau/Table%201?view=Among%20Us%20Stats%20Table', {
-        headers: {
-            'Authorization': 'Bearer '
-        }
-    });
+    const data = await fetch('https://www.amongusstats.com/.netlify/functions/data');
 
-    const json = await data.json();
-
-    return json.records.map(r => {
-        return r.fields;
-    });
+    return await data.json();
 }
 
 function field(data, field) {
