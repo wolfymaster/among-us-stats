@@ -1,0 +1,22 @@
+{
+  "name": "amongusstats",
+  "version": "1.0.0",
+  "description": "Display Among Us Stat Data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfymaster/among-us-stats.git"
+  },
+  "author": "WolfyMaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wolfymaster/among-us-stats/issues"
+  },
+  "homepage": "https://github.com/wolfymaster/among-us-stats#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
