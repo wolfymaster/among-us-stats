@@ -1,5 +1,6 @@
 html,body {
     height: 100%;
+    font-size: 16px;
     padding-bottom: 20px;
 }
 
@@ -8,10 +9,41 @@ html,body {
 /*    width: 100%;*/
 /*}*/
 
+#header {
+    background-color: aliceblue;
+}
+
+#header #title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    position: relative;
+}
+
+#header #title:before {
+    content: url('sus-hat.png') ;
+    width:50px;
+    height:50px;
+    position: absolute;
+    top: -3px;
+    left: -25px;
+}
+
 #footer {
     background-color: beige;
 }
 
 .pad-20 {
     padding: 20px 0;
+}
+
+.pad-5 {
+    padding: 5px;
+}
+
+.flex {
+    display:flex;
+}
+
+.h-center {
+    align-items: center;
 }
