@@ -1,12 +1,15 @@
-#emergencies_called,
-#bodies_reported {
-    width: 100%;
+html,body {
+    height: 100%;
+    padding-bottom: 20px;
 }
+
+/*#emergencies_called,*/
+/*#bodies_reported {*/
+/*    width: 100%;*/
+/*}*/
 
 #footer {
     background-color: beige;
-    bottom: 0;
-    position:absolute;
 }
 
 .pad-20 {

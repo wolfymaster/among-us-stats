@@ -10,11 +10,7 @@ function field(data, field) {
     })
 }
 
-function buildObj(data) {
-    const fields = ['Name', 'Bodies Reported', 'Emergencies Called', 'Tasks Completed', 'All Tasks Completed', 'Sabotages Fixed', 'Impostor Kills', 'Times Murdered',
-    'Times Ejected', 'Crewmate Streak', 'Times Impostor', 'Times Crewmate', 'Games Started', 'Games Finished', 'Impostor Vote Wins', 'Impostor Kill Wins', 'Impostor Sabotage Wins',
-    'Crewmate Vote Wins', 'Crewmate Task Wins'];
-
+function buildObj(data, fields) {
     const obj = {};
 
     fields.map( f => {
@@ -66,14 +62,27 @@ function barGraph(ctx, rawStats, field) {
 
 amongus_data()
     .then(data => {
-        const rawStats = buildObj(data);
+        const fields = ['Name', 'Bodies Reported', 'Emergencies Called', 'Tasks Completed', 'All Tasks Completed', 'Sabotages Fixed', 'Impostor Kills', 'Times Murdered',
+            'Times Ejected', 'Crewmate Streak', 'Times Impostor', 'Times Crewmate', 'Games Started', 'Games Finished', 'Impostor Vote Wins', 'Impostor Kill Wins', 'Impostor Sabotage Wins',
+            'Crewmate Vote Wins', 'Crewmate Task Wins'];
+        const rawStats = buildObj(data, fields);
 
         // make graphs
-        let emergencies_called = document.getElementById('emergencies_called').getContext('2d');
-        barGraph(emergencies_called, rawStats, 'Emergencies Called');
+        // let emergencies_called = document.getElementById('emergencies_called').getContext('2d');
+        // barGraph(emergencies_called, rawStats, 'Emergencies Called');
+        //
+        // let bodies_reported = document.getElementById('bodies_reported').getContext('2d');
+        // barGraph(bodies_reported, rawStats, 'Bodies Reported');
+        //
+        // let tasks_completed = document.getElementById('tasks_completed').getContext('2d');
+        // barGraph(tasks_completed, rawStats, 'Tasks Completed');
 
-        let bodies_reported = document.getElementById('bodies_reported').getContext('2d');
-        barGraph(bodies_reported, rawStats, 'Bodies Reported');
-
+        fields
+            .filter(f => f !== 'Name')
+            .map(f => {
+                const nice_name = f.toLowerCase().split(' ').join('_');
+                const metric = document.getElementById(nice_name).getContext('2d');
+                barGraph(metric, rawStats, f);
+            });
     });
 
